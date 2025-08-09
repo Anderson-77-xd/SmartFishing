@@ -1,0 +1,174 @@
+.pesqueiro-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 8px 25px rgba(0, 102, 204, 0.2);
+  border: 1px solid rgba(77, 166, 255, 0.2);
+  overflow: hidden;
+  transition: all 0.3s;
+  width: 100%;
+  max-width: 100%;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.pesqueiro-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 40px rgba(0, 102, 204, 0.3);
+  border-color: rgba(77, 166, 255, 0.4);
+}
+
+.card-header {
+  padding: 1.5rem 1.5rem 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.stars {
+  color: #ffd700;
+  font-size: 1rem;
+}
+
+.rating-number {
+  color: #666;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.card-content {
+  padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-header h3 {
+  color: #2c5530;
+  font-size: 1.4rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.info-simple {
+  margin-bottom: 1rem;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+  color: #666;
+  font-weight: 500;
+}
+
+.peixes-preview {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.peixes-label {
+  font-size: 1.1rem;
+}
+
+.peixes-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  flex: 1;
+}
+
+.peixe-tag-small {
+  background: #e8f4f8;
+  color: #2c5530;
+  padding: 0.2rem 0.5rem;
+  border-radius: 10px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.peixe-tag-small.more {
+  background: #e0e0e0;
+  color: #666;
+}
+
+.descricao {
+  color: #666;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.info-section {
+  margin-bottom: 1.5rem;
+}
+
+.info-section h4 {
+  color: #2c5530;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.peixes-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.peixe-tag {
+  background: #e8f4f8;
+  color: #2c5530;
+  padding: 0.3rem 0.8rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.horario {
+  color: #4682b4;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.reservar-btn {
+  width: 100%;
+  background: linear-gradient(45deg, #0066cc, #4da6ff);
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  margin-top: auto;
+  box-shadow: 0 4px 15px rgba(77, 166, 255, 0.3);
+}
+
+.reservar-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(77, 166, 255, 0.4);
+  filter: brightness(1.1);
+}
+
+@media (max-width: 480px) {
+  .pesqueiro-card {
+    max-width: 100%;
+  }
+  
+  .card-content {
+    padding: 1rem;
+  }
+}

@@ -1,0 +1,196 @@
+.contato-page {
+  min-height: 100vh;
+  padding: 6rem 0 2rem 0;
+  position: relative;
+}
+
+
+
+.contato-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.contato-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.contato-header h1 {
+  color: #2c5530;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contato-header p {
+  color: #666;
+  font-size: 1.2rem;
+}
+
+.contato-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  margin-bottom: 3rem;
+}
+
+.contato-info {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  height: fit-content;
+}
+
+.contato-info h2 {
+  color: #2c5530;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.info-item {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.info-item:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+}
+
+.info-item h3 {
+  color: #4682b4;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.info-item p {
+  color: #666;
+  line-height: 1.6;
+}
+
+.contato-form {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.contato-form h2 {
+  color: #2c5530;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+  font-family: inherit;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #4682b4;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.enviar-btn {
+  width: 100%;
+  background: #4682b4;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.enviar-btn:hover {
+  background: #5a9bd4;
+}
+
+.mapa-section {
+  background: white;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.mapa-section h2 {
+  color: #2c5530;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+}
+
+.mapa-placeholder {
+  background: #f8f9fa;
+  padding: 3rem;
+  border-radius: 8px;
+  border: 2px dashed #ddd;
+}
+
+.mapa-placeholder p {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.mapa-placeholder p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .contato-container {
+    padding: 0 1rem;
+  }
+  
+  .contato-header h1 {
+    font-size: 2rem;
+  }
+  
+  .contato-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .contato-info,
+  .contato-form {
+    padding: 1.5rem;
+  }
+  
+  .mapa-section {
+    padding: 1.5rem;
+  }
+  
+  .mapa-placeholder {
+    padding: 2rem 1rem;
+  }
+}
