@@ -5,6 +5,7 @@ function DashboardDono({ peixesDono, setPeixesDono, dadosDashboard, setDadosDash
   const [activeTab, setActiveTab] = useState('overview')
   const [novoPeixe, setNovoPeixe] = useState('')
   const [showAddForm, setShowAddForm] = useState(false)
+  const [selectedPeixe, setSelectedPeixe] = useState(null)
 
   const adicionarPeixe = () => {
     if (novoPeixe.trim()) {
@@ -16,6 +17,79 @@ function DashboardDono({ peixesDono, setPeixesDono, dadosDashboard, setDadosDash
 
   const removerPeixe = (index) => {
     setPeixesDono(peixesDono.filter((_, i) => i !== index))
+  }
+
+  const peixesInfo = {
+    'Tucunaré': {
+      nome: 'Tucunaré',
+      nomecientifico: 'Cichla spp.',
+      descricao: 'Peixe carnívoro de água doce, muito apreciado na pesca esportiva.',
+      tamanho: 'Médio a Grande (1-8kg)',
+      habitat: 'Águas calmas com vegetação',
+      isca: 'Lambari vivo, iscas artificiais',
+      dificuldade: 'Média',
+      melhorhorario: '06:00-09:00 e 17:00-19:00',
+      dicas: 'Prefere locais com estruturas submersas como troncos e pedras.'
+    },
+    'Dourado': {
+      nome: 'Dourado',
+      nomecientifico: 'Salminus brasiliensis',
+      descricao: 'Conhecido como "rei do rio", é um dos peixes mais desejados pelos pescadores.',
+      tamanho: 'Grande (3-15kg)',
+      habitat: 'Corredeiras e águas oxigenadas',
+      isca: 'Tuvira, lambari, iscas artificiais',
+      dificuldade: 'Difícil',
+      melhorhorario: '05:00-08:00 e 16:00-18:00',
+      dicas: 'Peixe muito brigador, use equipamentos resistentes.'
+    },
+    'Pintado': {
+      nome: 'Pintado',
+      nomecientifico: 'Pseudoplatystoma corruscans',
+      descricao: 'Grande bagre de couro com manchas características.',
+      tamanho: 'Grande (5-30kg)',
+      habitat: 'Fundo de rios e lagoas',
+      isca: 'Pedaços de peixe, minhocuçu',
+      dificuldade: 'Média',
+      melhorhorario: '18:00-06:00 (noturno)',
+      dicas: 'Pesca melhor durante a noite, use iscas no fundo.'
+    },
+    'Pacu': {
+      nome: 'Pacu',
+      nomecientifico: 'Piaractus mesopotamicus',
+      descricao: 'Peixe onívoro, parente da piranha, mas de hábitos pacíficos.',
+      tamanho: 'Médio (1-5kg)',
+      habitat: 'Águas calmas com vegetação',
+      isca: 'Milho, frutas, massas',
+      dificuldade: 'Fácil',
+      melhorhorario: '07:00-11:00 e 14:00-17:00',
+      dicas: 'Gosta de iscas vegetais, especialmente milho e frutas.'
+    },
+    'Traíra': {
+      nome: 'Traíra',
+      nomecientifico: 'Hoplias malabaricus',
+      descricao: 'Peixe carnívoro agressivo, excelente para iniciantes.',
+      tamanho: 'Pequeno a Médio (0.5-3kg)',
+      habitat: 'Águas rasas com vegetação',
+      isca: 'Minhoca, lambari, rã',
+      dificuldade: 'Fácil',
+      melhorhorario: '06:00-10:00 e 16:00-19:00',
+      dicas: 'Ataca qualquer isca em movimento, ideal para iniciantes.'
+    }
+  }
+
+  const mostrarInfoPeixe = (nomePeixe) => {
+    const info = peixesInfo[nomePeixe] || {
+      nome: nomePeixe,
+      nomecientifico: 'Informação não disponível',
+      descricao: 'Peixe disponível no pesqueiro.',
+      tamanho: 'Variado',
+      habitat: 'Águas do pesqueiro',
+      isca: 'Iscas variadas',
+      dificuldade: 'Média',
+      melhorhorario: '06:00-18:00',
+      dicas: 'Consulte o proprietário para mais informações.'
+    }
+    setSelectedPeixe(info)
   }
 
   const renderContent = () => {
@@ -228,15 +302,18 @@ function DashboardDono({ peixesDono, setPeixesDono, dadosDashboard, setDadosDash
             
             <div className="peixes-grid">
               {peixesDono.map((peixe, index) => (
-                <div key={index} className="peixe-card">
+                <div key={index} className="peixe-card" onClick={() => mostrarInfoPeixe(peixe)}>
                   <div className="peixe-header">
                     <span className="peixe-icon">🐟</span>
                     <h4>{peixe}</h4>
                     <div className="peixe-actions">
-                      <button className="edit-peixe-btn">✏️</button>
+                      <button className="edit-peixe-btn" onClick={(e) => e.stopPropagation()}>✏️</button>
                       <button 
                         className="remove-peixe-btn" 
-                        onClick={() => removerPeixe(index)}
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          removerPeixe(index)
+                        }}
                       >
                         🗑️
                       </button>
@@ -252,16 +329,74 @@ function DashboardDono({ peixesDono, setPeixesDono, dadosDashboard, setDadosDash
                       <span className="info-label">Dificuldade:</span>
                       <span className="info-value">{index % 3 === 0 ? 'Fácil' : 'Média'}</span>
                     </div>
-
                   </div>
                   
                   <div className="peixe-tags">
                     <span className="tag size">{index % 2 === 0 ? 'Médio' : 'Grande'}</span>
                     <span className="tag difficulty">{index % 3 === 0 ? 'Fácil' : 'Média'}</span>
                   </div>
+                  
+                  <div className="click-hint">
+                    <span>👁️ Clique para ver detalhes</span>
+                  </div>
                 </div>
               ))}
             </div>
+            
+            {selectedPeixe && (
+              <div className="peixe-modal-overlay" onClick={() => setSelectedPeixe(null)}>
+                <div className="peixe-modal" onClick={(e) => e.stopPropagation()}>
+                  <div className="modal-header">
+                    <h3>🐟 {selectedPeixe.nome}</h3>
+                    <button className="close-btn" onClick={() => setSelectedPeixe(null)}>×</button>
+                  </div>
+                  
+                  <div className="modal-content">
+                    <div className="peixe-detail-section">
+                      <h4>Informações Gerais</h4>
+                      <div className="detail-grid">
+                        <div className="detail-item">
+                          <strong>Nome Científico:</strong>
+                          <span>{selectedPeixe.nomecientifico}</span>
+                        </div>
+                        <div className="detail-item">
+                          <strong>Tamanho:</strong>
+                          <span>{selectedPeixe.tamanho}</span>
+                        </div>
+                        <div className="detail-item">
+                          <strong>Dificuldade:</strong>
+                          <span>{selectedPeixe.dificuldade}</span>
+                        </div>
+                        <div className="detail-item">
+                          <strong>Melhor Horário:</strong>
+                          <span>{selectedPeixe.melhorhorario}</span>
+                        </div>
+                      </div>
+                    </div>
+                    
+                    <div className="peixe-detail-section">
+                      <h4>Descrição</h4>
+                      <p>{selectedPeixe.descricao}</p>
+                    </div>
+                    
+                    <div className="peixe-detail-section">
+                      <h4>Habitat</h4>
+                      <p>{selectedPeixe.habitat}</p>
+                    </div>
+                    
+                    <div className="peixe-detail-section">
+                      <h4>Iscas Recomendadas</h4>
+                      <p>{selectedPeixe.isca}</p>
+                    </div>
+                    
+                    <div className="peixe-detail-section">
+                      <h4>Dicas de Pesca</h4>
+                      <p>{selectedPeixe.dicas}</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
             
 
           </div>
