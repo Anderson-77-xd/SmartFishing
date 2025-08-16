@@ -206,8 +206,8 @@
 .peixe-card.clickable:hover {
   background: #d1ecf1;
   border-color: #17a2b8;
-  box-shadow: 0 4px 15px rgba(23, 162, 184, 0.3);
-  transform: translateY(-2px);
+  box-shadow: 0 3px 10px rgba(23, 162, 184, 0.2);
+  transform: translateY(-1px);
 }
 
 .peixe-icon {

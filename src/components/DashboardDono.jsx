@@ -99,19 +99,19 @@ function DashboardDono({ peixesDono, setPeixesDono, dadosDashboard, setDadosDash
           <div className="overview-content">
             <div className="stats-grid">
               <div className="stat-card">
-                <h3>📊 Visitantes Hoje</h3>
+                <h3>Visitantes Hoje</h3>
                 <p className="stat-number">{dadosDashboard.stats.visitantesHoje}</p>
               </div>
               <div className="stat-card">
-                <h3>🐟 Peixes Pescados</h3>
+                <h3>Peixes Pescados</h3>
                 <p className="stat-number">{dadosDashboard.stats.peixesPescados}</p>
               </div>
               <div className="stat-card">
-                <h3>💰 Receita do Mês</h3>
+                <h3>Receita do Mês</h3>
                 <p className="stat-number">{dadosDashboard.stats.receitaMes}</p>
               </div>
               <div className="stat-card">
-                <h3>⭐ Avaliação Média</h3>
+                <h3>Avaliação Média</h3>
                 <p className="stat-number">{dadosDashboard.stats.avaliacaoMedia}</p>
               </div>
             </div>
@@ -130,10 +130,10 @@ function DashboardDono({ peixesDono, setPeixesDono, dadosDashboard, setDadosDash
               </div>
               
               <div className="weather-info">
-                <h3>🌤️ Condições do Tempo</h3>
+                <h3>Condições do Tempo</h3>
                 <div className="weather-card">
                   <div className="weather-main">
-                    <span className="weather-icon">☀️</span>
+                    <span className="weather-icon">Sol</span>
                     <div className="weather-temp">
                       <span className="temp">28°C</span>
                       <span className="condition">Ensolarado</span>
@@ -141,13 +141,13 @@ function DashboardDono({ peixesDono, setPeixesDono, dadosDashboard, setDadosDash
                   </div>
                   <div className="weather-details">
                     <div className="weather-item">
-                      <span>💧 Umidade: 65%</span>
+                      <span>Umidade: 65%</span>
                     </div>
                     <div className="weather-item">
-                      <span>🌬️ Vento: 12 km/h</span>
+                      <span>Vento: 12 km/h</span>
                     </div>
                     <div className="weather-item">
-                      <span>🌡️ Sensação: 31°C</span>
+                      <span>Sensação: 31°C</span>
                     </div>
                   </div>
 
@@ -157,7 +157,7 @@ function DashboardDono({ peixesDono, setPeixesDono, dadosDashboard, setDadosDash
             
             <div className="performance-section">
               <div className="revenue-chart">
-                <h3>📈 Receita dos Últimos 7 Dias</h3>
+                <h3>Receita dos Últimos 7 Dias</h3>
                 <div className="chart-container">
                   <div className="chart-bars">
                     <div className="chart-bar" style={{height: '60%'}}>
@@ -193,7 +193,7 @@ function DashboardDono({ peixesDono, setPeixesDono, dadosDashboard, setDadosDash
               </div>
               
               <div className="top-clients">
-                <h3>🏆 Top Clientes do Mês</h3>
+                <h3>Top Clientes do Mês</h3>
                 <div className="clients-list">
                   <div className="client-item">
                     <div className="client-rank">1</div>
@@ -304,7 +304,7 @@ function DashboardDono({ peixesDono, setPeixesDono, dadosDashboard, setDadosDash
               {peixesDono.map((peixe, index) => (
                 <div key={index} className="peixe-card" onClick={() => mostrarInfoPeixe(peixe)}>
                   <div className="peixe-header">
-                    <span className="peixe-icon">🐟</span>
+                    <span className="peixe-icon">Peixe</span>
                     <h4>{peixe}</h4>
                     <div className="peixe-actions">
                       <button className="edit-peixe-btn" onClick={(e) => e.stopPropagation()}>✏️</button>
@@ -337,7 +337,7 @@ function DashboardDono({ peixesDono, setPeixesDono, dadosDashboard, setDadosDash
                   </div>
                   
                   <div className="click-hint">
-                    <span>👁️ Clique para ver detalhes</span>
+                    <span>Clique para ver detalhes</span>
                   </div>
                 </div>
               ))}
@@ -347,7 +347,7 @@ function DashboardDono({ peixesDono, setPeixesDono, dadosDashboard, setDadosDash
               <div className="peixe-modal-overlay" onClick={() => setSelectedPeixe(null)}>
                 <div className="peixe-modal" onClick={(e) => e.stopPropagation()}>
                   <div className="modal-header">
-                    <h3>🐟 {selectedPeixe.nome}</h3>
+                    <h3>{selectedPeixe.nome}</h3>
                     <button className="close-btn" onClick={() => setSelectedPeixe(null)}>×</button>
                   </div>
                   
@@ -440,21 +440,21 @@ function DashboardDono({ peixesDono, setPeixesDono, dadosDashboard, setDadosDash
                       </div>
                       <div className="cliente-details">
                         <h4>{reserva.nome}</h4>
-                        <p className="cliente-contato">📞 (11) 99999-{1000 + index}</p>
+                        <p className="cliente-contato">(11) 99999-{1000 + index}</p>
                       </div>
                     </div>
                     
                     <div className="reserva-details">
                       <div className="detail-item">
-                        <span className="detail-icon">📅</span>
+                        <span className="detail-icon">Data:</span>
                         <span>{reserva.data}</span>
                       </div>
                       <div className="detail-item">
-                        <span className="detail-icon">👥</span>
+                        <span className="detail-icon">Pessoas:</span>
                         <span>{index === 0 ? '2' : '4'} pessoas</span>
                       </div>
                       <div className="detail-item">
-                        <span className="detail-icon">💰</span>
+                        <span className="detail-icon">Valor:</span>
                         <span>R$ {index === 0 ? '50,00' : '100,00'}</span>
                       </div>
                     </div>
@@ -536,7 +536,7 @@ function DashboardDono({ peixesDono, setPeixesDono, dadosDashboard, setDadosDash
           <div className="info-content">
             <div className="info-grid">
               <div className="pesqueiro-info">
-                <h3>🏢 Informações do Pesqueiro</h3>
+                <h3>Informações do Pesqueiro</h3>
                 <div className="info-card">
                   <div className="info-item">
                     <strong>Nome:</strong> Meu Pesqueiro
@@ -563,7 +563,7 @@ function DashboardDono({ peixesDono, setPeixesDono, dadosDashboard, setDadosDash
               </div>
               
               <div className="avaliacoes-section">
-                <h3>⭐ Avaliações dos Clientes</h3>
+                <h3>Avaliações dos Clientes</h3>
                 <div className="rating-summary">
                   <div className="rating-average">
                     <span className="rating-number">4.8</span>
@@ -603,11 +603,11 @@ function DashboardDono({ peixesDono, setPeixesDono, dadosDashboard, setDadosDash
       <div className="dashboard-header">
         <div className="header-content">
           <div>
-            <h1>🏢 Painel do Proprietário</h1>
+            <h1>Painel do Proprietário</h1>
             <p>Gerencie seu pesqueiro de forma eficiente</p>
           </div>
           <button className="logout-btn" onClick={() => window.location.reload()}>
-            🚪 Sair
+            Sair
           </button>
         </div>
       </div>
@@ -617,31 +617,31 @@ function DashboardDono({ peixesDono, setPeixesDono, dadosDashboard, setDadosDash
           className={`nav-btn ${activeTab === 'overview' ? 'active' : ''}`}
           onClick={() => setActiveTab('overview')}
         >
-          📊 Visão Geral
+          Visão Geral
         </button>
         <button 
           className={`nav-btn ${activeTab === 'pesqueiro' ? 'active' : ''}`}
           onClick={() => setActiveTab('pesqueiro')}
         >
-          🏢 Meu Pesqueiro
+          Meu Pesqueiro
         </button>
         <button 
           className={`nav-btn ${activeTab === 'peixes' ? 'active' : ''}`}
           onClick={() => setActiveTab('peixes')}
         >
-          🐟 Peixes
+          Peixes
         </button>
         <button 
           className={`nav-btn ${activeTab === 'reservas' ? 'active' : ''}`}
           onClick={() => setActiveTab('reservas')}
         >
-          📅 Reservas
+          Reservas
         </button>
         <button 
           className={`nav-btn ${activeTab === 'info' ? 'active' : ''}`}
           onClick={() => setActiveTab('info')}
         >
-          📋 Informações & Avaliações
+          Informações & Avaliações
         </button>
       </div>
       

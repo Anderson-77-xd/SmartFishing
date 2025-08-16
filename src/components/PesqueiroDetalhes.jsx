@@ -151,47 +151,47 @@ function PesqueiroDetalhes({ pesqueiro, onBack }) {
         
         <div className="specs-grid">
           <div className="spec-card">
-            <h4>🏞️ Área Total</h4>
+            <h4>Área Total</h4>
             <p>{pesqueiro.area}</p>
           </div>
           <div className="spec-card">
-            <h4>👥 Capacidade</h4>
+            <h4>Capacidade</h4>
             <p>{pesqueiro.capacidade}</p>
           </div>
           <div className="spec-card">
-            <h4>🌊 Profundidade</h4>
+            <h4>Profundidade</h4>
             <p>{pesqueiro.profundidade}</p>
           </div>
           <div className="spec-card">
-            <h4>🕒 Horário</h4>
+            <h4>Horário</h4>
             <p>{pesqueiro.horario}</p>
           </div>
         </div>
         
         <div className="detalhes-grid">
           <div className="info-card">
-            <h3>📍 Localização</h3>
+            <h3>Localização</h3>
             <p>{pesqueiro.detalhes.endereco}</p>
           </div>
           
           <div className="info-card">
-            <h3>📞 Contato</h3>
+            <h3>Contato</h3>
             <p>{pesqueiro.detalhes.telefone}</p>
           </div>
           
           <div className="info-card">
-            <h3>💰 Entrada</h3>
+            <h3>Entrada</h3>
             <p>{pesqueiro.detalhes.preco}</p>
           </div>
           
           <div className="info-card">
-            <h3>⚖️ Preço por Kg</h3>
+            <h3>Preço por Kg</h3>
             <p>{pesqueiro.detalhes.precoKg}</p>
           </div>
         </div>
         
         <div className="modalidades-section">
-          <h3>🎣 Modalidades de Pesca</h3>
+          <h3>Modalidades de Pesca</h3>
           <div className="modalidades-grid">
             {pesqueiro.modalidades.map((modalidade, index) => (
               <div key={index} className="modalidade-card">
@@ -202,14 +202,14 @@ function PesqueiroDetalhes({ pesqueiro, onBack }) {
         </div>
         
         <div className="catalogo-section">
-          <h3>🐟 Catálogo de Peixes</h3>
+          <h3>Catálogo de Peixes</h3>
           <p className="catalogo-hint">Clique em qualquer peixe para ver informações detalhadas</p>
           <div className="peixes-grid">
             {pesqueiro.peixes.map((peixe, index) => (
               <div key={index} className="peixe-card clickable" onClick={() => mostrarInfoPeixe(peixe)}>
-                <span className="peixe-icon">🐟</span>
+                <span className="peixe-icon">Peixe</span>
                 <span className="peixe-nome">{peixe}</span>
-                <span className="click-indicator">👁️</span>
+                <span className="click-indicator">Ver detalhes</span>
               </div>
             ))}
           </div>
@@ -219,7 +219,7 @@ function PesqueiroDetalhes({ pesqueiro, onBack }) {
           <div className="peixe-modal-overlay" onClick={() => setSelectedPeixe(null)}>
             <div className="peixe-modal" onClick={(e) => e.stopPropagation()}>
               <div className="modal-header">
-                <h3>🐟 {selectedPeixe.nome}</h3>
+                <h3>{selectedPeixe.nome}</h3>
                 <button className="close-btn" onClick={() => setSelectedPeixe(null)}>×</button>
               </div>
               
@@ -271,7 +271,7 @@ function PesqueiroDetalhes({ pesqueiro, onBack }) {
         )}
         
         <div className="iscas-section">
-          <h3>🪱 Iscas Disponíveis</h3>
+          <h3>Iscas Disponíveis</h3>
           <div className="iscas-grid">
             {pesqueiro.detalhes.iscasDisponiveis.map((isca, index) => (
               <div key={index} className="isca-item">
@@ -282,7 +282,7 @@ function PesqueiroDetalhes({ pesqueiro, onBack }) {
         </div>
         
         <div className="facilidades-section">
-          <h3>🏢 Facilidades</h3>
+          <h3>Facilidades</h3>
           <div className="facilidades-grid">
             {pesqueiro.facilidades.map((facilidade, index) => (
               <div key={index} className="facilidade-item">
@@ -293,7 +293,7 @@ function PesqueiroDetalhes({ pesqueiro, onBack }) {
         </div>
         
         <div className="equipamentos-section">
-          <h3>🎣 Equipamentos Inclusos</h3>
+          <h3>Equipamentos Inclusos</h3>
           <div className="equipamentos-grid">
             {pesqueiro.detalhes.equipamentos.map((equipamento, index) => (
               <div key={index} className="equipamento-item">
@@ -306,7 +306,7 @@ function PesqueiroDetalhes({ pesqueiro, onBack }) {
         {pesqueiro.isDono && (
           <>
             <div className="dashboard-stats">
-              <h3>📈 Estatísticas do Seu Pesqueiro</h3>
+              <h3>Estatísticas do Seu Pesqueiro</h3>
               <div className="stats-grid-detalhes">
                 <div className="stat-item">
                   <span className="stat-number">{pesqueiro.stats.visitantesHoje}</span>
@@ -328,7 +328,7 @@ function PesqueiroDetalhes({ pesqueiro, onBack }) {
             </div>
             
             <div className="atividade-recente">
-              <h3>🕰️ Atividade Recente</h3>
+              <h3>Atividade Recente</h3>
               <div className="atividades-list">
                 {pesqueiro.atividades.map((atividade, index) => (
                   <div key={index} className="atividade-item">
@@ -340,13 +340,13 @@ function PesqueiroDetalhes({ pesqueiro, onBack }) {
             </div>
             
             <div className="reservas-dono">
-              <h3>📅 Reservas</h3>
+              <h3>Reservas</h3>
               <div className="reservas-list-detalhes">
                 {pesqueiro.reservas.map((reserva, index) => (
                   <div key={index} className="reserva-item-detalhes">
                     <div className="reserva-info-detalhes">
                       <h4>{reserva.nome}</h4>
-                      <p>📅 {reserva.data}</p>
+                      <p>{reserva.data}</p>
                     </div>
                     <span className={`status-detalhes ${reserva.status}`}>
                       {reserva.status === 'confirmada' ? 'Confirmada' : 'Pendente'}
@@ -357,7 +357,7 @@ function PesqueiroDetalhes({ pesqueiro, onBack }) {
             </div>
             
             <div className="avaliacoes-dono">
-              <h3>⭐ Avaliações dos Clientes</h3>
+              <h3>Avaliações dos Clientes</h3>
               <div className="avaliacoes-list-detalhes">
                 {pesqueiro.avaliacoes.map((avaliacao, index) => (
                   <div key={index} className="avaliacao-item-detalhes">

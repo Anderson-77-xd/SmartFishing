@@ -55,8 +55,8 @@
 }
 
 .logout-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(238, 90, 82, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(238, 90, 82, 0.3);
 }
 
 .dashboard-header h1 {
@@ -113,14 +113,14 @@
 .nav-btn:hover {
   background: rgba(70, 130, 180, 0.1);
   color: #4682b4;
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .nav-btn.active {
   background: linear-gradient(135deg, #4682b4, #1e3a8a);
   color: white;
   box-shadow: 0 4px 15px rgba(70, 130, 180, 0.3);
-  transform: translateY(-2px);
+  transform: translateY(-1px);
 }
 
 .dashboard-content {
@@ -152,8 +152,8 @@
 }
 
 .stat-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
 .stat-card::before {
@@ -287,8 +287,8 @@
 }
 
 .save-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(70, 130, 180, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(70, 130, 180, 0.3);
 }
 
 .add-btn {
@@ -305,8 +305,8 @@
 }
 
 .add-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(72, 187, 120, 0.4);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(72, 187, 120, 0.3);
 }
 
 .add-form {
@@ -1200,7 +1200,7 @@
 .edit-btn:hover,
 .delete-btn:hover,
 .whatsapp-btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 .reserva-extra-info {
